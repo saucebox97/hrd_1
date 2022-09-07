@@ -1,4 +1,4 @@
-package com.hrdkorea.hrd_1;
+package com.hrdkorea.member;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

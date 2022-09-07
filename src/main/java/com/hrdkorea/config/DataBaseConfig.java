@@ -1,4 +1,4 @@
-package com.hrdkorea.hrd_1.config;
+package com.hrdkorea.config;
 
 
 import com.zaxxer.hikari.HikariConfig;
@@ -18,8 +18,8 @@ public class DataBaseConfig {
     public DataSource dataSource() {
 
         HikariConfig config = new HikariConfig();
-        config.setUsername("system");
-        config.setPassword("1234");
+        config.setUsername("sys as sysdba");
+        config.setPassword("oracle");
         config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
         config.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 

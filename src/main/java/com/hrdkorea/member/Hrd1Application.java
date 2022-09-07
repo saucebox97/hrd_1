@@ -1,4 +1,4 @@
-package com.hrdkorea.hrd_1;
+package com.hrdkorea.member;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
