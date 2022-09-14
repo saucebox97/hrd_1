@@ -1,4 +1,4 @@
-package com.hrdkorea.member;
+package com.hrdkorea.mall.member;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;

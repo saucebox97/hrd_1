@@ -1,4 +1,4 @@
-package com.hrdkorea.money.domain;
+package com.hrdkorea.mall.money.domain;
 
 import java.util.Date;
 

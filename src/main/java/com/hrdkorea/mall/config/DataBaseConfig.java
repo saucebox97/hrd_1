@@ -1,4 +1,4 @@
-package com.hrdkorea.config;
+package com.hrdkorea.mall.config;
 
 
 import com.zaxxer.hikari.HikariConfig;
@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 // DB 관련 설정 클래스
 @Configuration
-@ComponentScan(basePackages = "com.project.hrd_1")
+@ComponentScan(basePackages = "com.hrdkorea.mall")
 public class DataBaseConfig {
 
     @Bean
