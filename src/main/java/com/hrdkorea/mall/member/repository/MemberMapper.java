@@ -14,6 +14,12 @@ public interface MemberMapper {
     // 전체 조회/수정
     List<Member> findAll();
 
-    // 수정정
+    // 회원번호 자동발생 코드
+    int auto();
+
+    // 수정 상세보기
+    Member findOne(Long custNo);
+
+    // 수정하기
    boolean modify(Member member);
 }

@@ -27,8 +27,31 @@
     <update id="modify">
         UPDATE member_tbl_02
         SET cust_no = #{custNo}, cust_name = #{custName}, phone = #{phone},
-        address = #{address}, grade = #{grade}, city = #{city}
+        address = #{address}, join_date = #{joinDate}, grade = #{grade}, city = #{city}
         WHERE cust_no = #{custNo}
     </update>
+
+    <select id="findOne" resultMap="MemberMap">
+        SELECT * FROM member_tbl_02
+        WHERE cust_no=#{custNo}
+    </select>
+
+<!--    <update id="auto">-->
+<!--        SELECT MAX(cust_no+1) &#45;&#45; 새로운 회원번호-->
+<!--        FROM member_tbl_02-->
+<!--        ;-->
+<!--    </update>-->
+
+<!--    <update id="auto">-->
+<!--        UPDATE cust_no-->
+<!--        SET cust_no = #{custNo}-->
+<!--        WHERE cust_no = #{custNo}-->
+<!--    </update>-->
+
+    <select id="auto" resultType="int">
+        SELECT MAX(cust_no+1)
+        FROM member_tbl_02
+
+    </select>
 
 </mapper>
