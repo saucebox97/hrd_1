@@ -35,11 +35,11 @@ public class MemberController {
     @GetMapping("/list")
     public String list(Model model) {
 
-        log.info("36 controller request /mall/list GET!");
+        log.info("38 controller request /mall/list GET!");
 
         Map<String, Object> MemberMap = memberService.findAllService();
 
-        log.info("40 return data - {}", MemberMap);
+        log.info("42 return data - {}", MemberMap);
 
         model.addAttribute("mList", MemberMap.get("mList"));
 
@@ -49,7 +49,7 @@ public class MemberController {
     // 회원 등록 화면 요청
     @GetMapping("/write")
     public String write(Member member, Model model) {
-        log.info("48 controller request /mall/write GET");
+        log.info("52 controller request /mall/write GET");
 
         Map<String, Object> MemberMap = memberService.findAllService();
 
@@ -65,9 +65,9 @@ public class MemberController {
 
         Map<String, Object> MemberNumber = memberService.findAllService();
 
-        log.info("68 return data - {}", MemberNumber);
+//        log.info("68 return data - {}", MemberNumber);
 
-        log.info("70 {}", member.getCustNo());
+//        log.info("70 {}", member.getCustNo());
 
         Date today = new Date();
         SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");
@@ -82,20 +82,20 @@ public class MemberController {
     // 회원 등록 요청
     @PostMapping("/write")
     public String write(Member member, RedirectAttributes ra) {
-        log.info("80 controller request /member/write POST! - {}", member);
+        log.info("85 controller request /member/write POST! - {}", member);
 
         boolean flag = memberService.saveService(member);
 
         if (flag) ra.addFlashAttribute("msg", "reg-success");
 
-        return flag ? "redirect:/mall-write" : "/mall-write";
+        return flag ? "redirect:/mall/write" : "/mall/write";
     }
 
     // 수정 화면 요청
     @GetMapping("/modify/{custNo}")
     public String modify(@PathVariable Long custNo, Model model) {
         Member member = memberService.findOneService(custNo);
-        log.info("86 find {}", member);
+        log.info("98 find {}", member);
 
         model.addAttribute("member", member);
         return "mall/mall-modify";
@@ -104,24 +104,26 @@ public class MemberController {
     // 수정 처리 요청
     @PostMapping("/modify")
     public String modify(Member member) {
-        log.info("95 controller request /mall/modify POST! - {}", member);
+        log.info("107 controller request /mall/modify POST! - {}", member);
+
         boolean flag = memberService.modifyService(member);
+
         return flag ? "redirect:/mall/modify/" + member.getCustNo() : "redirect:/";
     }
 
     // 회원 매출 조회
-//    @GetMapping("/sales")
-//    public String sales(Model model) {
-//
-//        log.info("85 controller request /mall/sales GET!");
-//
-//        Map<String, Object> MemberMap = memberService.findAllService();
-//
-//        log.info("40 return data - {}", MemberMap);
-//
-//        model.addAttribute("mList", MemberMap.get("mList"));
-//
-//        return "mall/mall-list";
-//    }
+    @GetMapping("/sales")
+    public String sales(Model model) {
+
+        log.info("118 controller request /mall/sales GET!");
+
+        Map<String, Object> MemberMap = memberService.findAllService();
+
+        log.info("122 return data - {}", MemberMap);
+
+        model.addAttribute("mList", MemberMap.get("mList"));
+
+        return "mall/mall-sales";
+    }
 
 }

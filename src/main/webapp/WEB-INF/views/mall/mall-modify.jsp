@@ -189,6 +189,15 @@
     </div>
 
     <script>
+
+        // msg 확인
+        function alertServerMessage() {
+            const msg = '${msg}';
+
+            if (msg === 'reg-success') {
+                alert('게시물이 정상 수정되었습니다.');
+            }
+        }
         
         // 등록 검증
 
@@ -258,6 +267,12 @@
         $toList.onclick = e => {
             location.href = '/mall/list';
         };
+
+        (function () {
+
+            alertServerMessage(); // 왜해야돼는거지
+
+        })();
     </script>
 
 </body>

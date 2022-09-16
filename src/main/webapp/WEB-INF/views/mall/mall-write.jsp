@@ -138,13 +138,13 @@
 
                 <div>
                     <label for="number-input" class="form-label">회원번호(자동발생)</label>
-                    <input type="text" class="form-control" id="number-input" name="number"
+                    <input type="text" class="form-control" id="number-input" name="custNo"
                     readonly value="${number}">
                 </div>
                 
                 <div>
                     <label for="name-input" class="form-label">회원성명</label>
-                    <input type="text" class="form-control" id="name-input" name="custname">
+                    <input type="text" class="form-control" id="name-input" name="custName">
                 </div>
                 
                 <div>
@@ -259,6 +259,12 @@
         $toList.onclick = e => {
             location.href = '/mall/list';
         };
+
+        (function () {
+
+            alertServerMessage(); // 왜해야돼는거지
+
+        })();
     </script>
 
 </body>

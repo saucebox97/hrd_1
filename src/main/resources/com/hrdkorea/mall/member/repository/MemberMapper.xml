@@ -54,4 +54,11 @@
 
     </select>
 
+    <select id="findAll2" resultMap="MemberMap">
+
+        SELECT *
+        FROM member_tbl_02
+
+    </select>
+
 </mapper>

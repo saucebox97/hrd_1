@@ -20,27 +20,29 @@ public class MemberService {
     private final MemberMapper mapper;
 
     public boolean saveService(Member member) {
-        log.info("save service start - {}", member);
+        log.info("23 save service start - {}", member);
         return mapper.save(member);
     }
 
     public Map<String, Object> findAllService() {
-//        log.info("28 findAll service start");
+        log.info("28 findAll service start");
 
         Map<String, Object> findDataMap = new HashMap<>();
 
         List<Member> memberList = mapper.findAll();
 
-//        log.info("34 {}", memberList);
-//
-//        Date today = new Date();
-//        SimpleDateFormat date = new SimpleDateFormat("yyyy년-MM월-dd일");
+        log.info("34 {}", memberList);
 
-//        Date today = new Date();
-////        System.out.println(today);
-//        SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");
-//        memberList.joinDate = date;
+        for (int i = 0; i < memberList.size(); i++) {
+            log.info("37 {}", memberList);
+
+//        log.info("34 {}", memberList.joinDate);
+
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //
+//        String changeFormat = simpleDateFormat.format(joinDate)
+        }
+
         findDataMap.put("mList", memberList);
 
         return findDataMap;
@@ -48,7 +50,7 @@ public class MemberService {
 
     // 게시물 수정 요청 중간 처리
     public boolean modifyService(Member member) {
-        log.info("46 modify service start - {}", member);
+        log.info("51 modify service start - {}", member);
         return mapper.modify(member);
     }
 
@@ -65,8 +67,30 @@ public class MemberService {
 
         int auto = mapper.auto();
 
-
         return auto;
     }
 
+    public Map<String, Object> findAllService2() {
+        log.info("74 findAll2 service start");
+
+        Map<String, Object> findDataMap = new HashMap<>();
+
+        List<Member> memberList = mapper.findAll();
+
+        log.info("34 {}", memberList);
+
+        for (int i = 0; i < memberList.size(); i++) {
+            log.info("37 {}", memberList);
+
+//        log.info("34 {}", memberList.joinDate);
+
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//
+//        String changeFormat = simpleDateFormat.format(joinDate)
+        }
+
+        findDataMap.put("mList", memberList);
+
+        return findDataMap;
+    }
 }

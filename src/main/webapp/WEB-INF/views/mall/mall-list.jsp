@@ -138,7 +138,7 @@
                 <a class="insert" href="/mall/write">회원등록</a>
             </div>
             <div class="btn-write">
-                <a class="insert" href="/mall/modify">회원목록조회/수정</a>
+                <a class="insert" href="/mall/list">회원목록조회/수정</a>
             </div>
             <div class="btn-write">
                 <a class="insert" href="/mall/sales">회원매출조회</a>

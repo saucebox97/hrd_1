@@ -12,7 +12,7 @@ public class Member {
     String custName;
     String phone;
     String address;
-    Date joinDate;
-    char grade;
-    char city;
+    String joinDate;
+    String grade;
+    String city;
 }
